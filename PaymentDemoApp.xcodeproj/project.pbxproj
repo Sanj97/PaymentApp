@@ -99,6 +99,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 808478292DCC885900D82A97 /* Build configuration list for PBXNativeTarget "PaymentDemoApp" */;
 			buildPhases = (
+				802C3D072DD4C80000530422 /* ShellScript */,
 				808478012DCC885800D82A97 /* Sources */,
 				808478022DCC885800D82A97 /* Frameworks */,
 				808478032DCC885800D82A97 /* Resources */,
@@ -230,6 +231,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		802C3D072DD4C80000530422 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint не установлен. Установи через Homebrew: brew install swiftlint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		808478012DCC885800D82A97 /* Sources */ = {
@@ -398,6 +419,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"PaymentDemoApp/Preview Content\"";
 				DEVELOPMENT_TEAM = YM7VYV326Q;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -427,6 +449,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"PaymentDemoApp/Preview Content\"";
 				DEVELOPMENT_TEAM = YM7VYV326Q;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
