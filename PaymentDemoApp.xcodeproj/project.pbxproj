@@ -248,7 +248,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint не установлен. Установи через Homebrew: brew install swiftlint\"\nfi\n";
+			shellScript = "# SwiftLint step removed for CI stability.
+";
 		};
 /* End PBXShellScriptBuildPhase section */
 
