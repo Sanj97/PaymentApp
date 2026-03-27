@@ -10,6 +10,7 @@ import SwiftUI
 struct AuthView: View {
     @State private var username = ""
     @State private var password = ""
+    @State private var isPasswordVisible = false
     @State private var isLoading = false
     @State private var error: String?
     @State private var isAuthenticated = false
@@ -36,12 +37,32 @@ struct AuthView: View {
                             .autocapitalization(.none)
                             .accessibilityIdentifier("username_field")
                         
-                        SecureField("Password", text: $password)
-                            .padding()
-                            .background(Color.white.opacity(0.6))
-                            .cornerRadius(12)
-                            .foregroundColor(.white)
-                            .accessibilityIdentifier("password_field")
+                        HStack(spacing: 8) {
+                            ZStack {
+                                SecureField("Password", text: $password)
+                                    .opacity(isPasswordVisible ? 0 : 1)
+                                    .allowsHitTesting(!isPasswordVisible)
+
+                                TextField("Password", text: $password)
+                                    .opacity(isPasswordVisible ? 1 : 0)
+                                    .allowsHitTesting(isPasswordVisible)
+                                    .autocapitalization(.none)
+                            }
+
+                            Button(action: {
+                                isPasswordVisible.toggle()
+                            }) {
+                                Image(systemName: isPasswordVisible ? "eye.slash.fill" : "eye.fill")
+                                    .foregroundColor(.white)
+                            }
+                            .buttonStyle(.plain)
+                            .accessibilityIdentifier("toggle_password_visibility")
+                        }
+                        .padding()
+                        .background(Color.white.opacity(0.6))
+                        .cornerRadius(12)
+                        .foregroundColor(.white)
+                        .accessibilityIdentifier("password_field")
                     }
                     
                     if let error = error {
